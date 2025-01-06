@@ -1,4 +1,4 @@
-def call(String imageName = 'boardgame', String tag = 'latest', String registry = 'harshalgaikwad') {
+def buildAndTag(String imageName = 'boardgame', String tag = 'latest', String registry = 'harshalgaikwad') {
     // Ensure Docker is available in the pipeline
     if (!tool('docker')) {
         error "Docker tool is not available!"
@@ -13,3 +13,4 @@ def call(String imageName = 'boardgame', String tag = 'latest', String registry 
         sh "docker tag ${imageName} ${registry}/${imageName}:${tag}"
     }
 }
+
