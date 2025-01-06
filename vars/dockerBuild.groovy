@@ -1,3 +1,5 @@
+// vars/dockerBuild.groovy
+
 def buildAndTag(String imageName = 'boardgame', String tag = 'latest', String registry = 'harshalgaikwad') {
     // Ensure Docker is available in the pipeline
     if (!tool('docker')) {
@@ -13,4 +15,5 @@ def buildAndTag(String imageName = 'boardgame', String tag = 'latest', String re
         sh "docker tag ${imageName} ${registry}/${imageName}:${tag}"
     }
 }
+
 
